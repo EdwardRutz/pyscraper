@@ -8,7 +8,9 @@
 - Python 3
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 - [Requests Library](https://requests.readthedocs.io/en/master/)
-- Python 3 Email module
+- [Python 3 Email module](https://docs.python.org/3/library/email.html)
+- [Python 3 time module](https://docs.python.org/3/library/time.html)
+- [Python 3 csv module](https://docs.python.org/3/library/csv.html)
 - [LXML Parser](https://lxml.de/)
 - Search for "My user agent" to get agent for creating a header to imitate a browser session
   - [What is my User Agent](https://www.whatismybrowser.com/detect/what-is-my-user-agent)
@@ -16,10 +18,9 @@
 
 
 
-
 ## MORE INFO
 
-[Udemy, Building Web Scraping Bot With Python](https://www.udemy.com/course/web-scraping-python/)
+- [Udemy, Building Web Scraping Bot With Python](https://www.udemy.com/course/web-scraping-python/)
 - [PEP 20, The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 - [Python 3 Docs](https://docs.python.org/3/)
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
