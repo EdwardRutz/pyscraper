@@ -4,6 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import csv
+import send_mail
+from datetime import date
 
 # Web pages to search
 
@@ -14,8 +16,9 @@ urls = ['https://finance.yahoo.com/quote/IBM?p=IBM&.tsrc=fin-srch','https://fina
 headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) '
                         'Chrome/80.0.3987.116 Safari/537.36'}
 
-## Exporting data to a csv file
-csv_file = open('scrape.csv', 'w')
+## Exporting data to a csv file, give current data as title
+today = str(date.today()) + '.csv'
+csv_file = open(today, 'w')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Stock Name', 'Current Price', 'Previous Close', 'Open', 'Bid', 'Ask', 'Day Range',
                      '52 Week Range', 'Volume', 'Avg. Volume'])
@@ -50,9 +53,14 @@ for url in urls:
         stock.append(value)
         # print(heading + ' - ' + value)
 
-    print('---> ')
+    print('---> ')  # Shows the completion of each step
 
-    csv_writer.writerow(stock )
+    csv_writer.writerow(stock)
     time.sleep(5)  # Pause each request so the site does not receive them all at once.
-    csv_file.close()
-# .get_text() extracts text
+
+csv_file.close()
+
+# send_mail.send(filename='scrape.csv')     # Sends csv via email, uncomment to use and configure email info
+
+
+
